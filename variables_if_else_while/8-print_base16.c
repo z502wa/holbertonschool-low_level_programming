@@ -1,14 +1,20 @@
 #include <stdio.h>
+
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ *
+ */
+
 int main(void)
 {
-int ch;
-for (ch = 122; ch >= 97; ch--) /* ASCII 122 = 'z' ، ASCII 97 = 'a' */
-putchar(ch);
-putchar('\n'); /* طباعة سطر جديد */
-return (0);
+	int i, j;
+
+	for (i = 0; i < 10; i++)
+		putchar(i + '0');
+	for (j = 97; j < 103; j++)
+		putchar(j);
+	putchar('\n');
+	return (0);
 }
