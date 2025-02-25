@@ -11,4 +11,6 @@ void print_most_numbers(void);
 int _putchar(char c);
 void more_numbers(void); /* Function prototype for printing numbers */
 int _putchar(char c); /* Function prototype for _putchar */
+void print_line(int n);
+int _putchar(char c);
 #endif
