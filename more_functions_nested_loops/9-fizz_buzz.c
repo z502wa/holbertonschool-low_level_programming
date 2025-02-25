@@ -1,9 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - طباعة الأرقام من 1 إلى 100 مع استبدال المضاعفات بـ Fizz و Buzz
+ * main - Prints numbers from 1 to 100, replacing multiples of 3 and 5
  *
- * Return: دائمًا 0 (نجاح)
+ * Description: Prints numbers from 1 to 100.
+ * Multiples of 3 are replaced with "Fizz".
+ * Multiples of 5 are replaced with "Buzz".
+ * Multiples of both 3 and 5 are replaced with "FizzBuzz".
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -20,9 +25,12 @@ int main(void)
 		else
 			printf("%d", i);
 
+		/* Ensure space is printed between words/numbers */
 		if (i != 100)
 			printf(" ");
 	}
+
+	/* Print a new line at the end */
 	printf("\n");
 
 	return (0);
