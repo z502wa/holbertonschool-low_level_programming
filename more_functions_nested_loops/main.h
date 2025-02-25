@@ -19,4 +19,6 @@ void print_square(int size); /* دالة لطباعة مربع */
 int _putchar(char c); /* دالة لطباعة حرف واحد */
 void print_triangle(int size); /* دالة لطباعة مثلث */
 int _putchar(char c); /* دالة لطباعة حرف واحد */
+void print_number(int n); /* دالة لطباعة عدد صحيح */
+int _putchar(char c);
 #endif
