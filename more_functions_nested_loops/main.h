@@ -17,4 +17,6 @@ void print_diagonal(int n);
 int _putchar(char c);
 void print_square(int size); /* دالة لطباعة مربع */
 int _putchar(char c); /* دالة لطباعة حرف واحد */
+void print_triangle(int size); /* دالة لطباعة مثلث */
+int _putchar(char c); /* دالة لطباعة حرف واحد */
 #endif
