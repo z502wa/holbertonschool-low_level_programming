@@ -31,15 +31,16 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
-				printf("%02x", b[i + j]);
+				printf("%02x", (unsigned char)b[i + j]);
 			else
 				printf("  ");
+
+			/* Add a space after every 2 bytes */
 			if (j % 2)
 				printf(" ");
 		}
 
 		/* Print character representation */
-		printf(" ");
 		for (j = 0; j < 10 && i + j < size; j++)
 		{
 			char c = b[i + j];
