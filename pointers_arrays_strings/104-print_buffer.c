@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * print_buffer - Prints a buffer with hexadecimal and character representation.
+ * print_buffer - Prints a buffer with hexadecimal
+ *                and character representation.
  * @b: Pointer to the buffer.
  * @size: Number of bytes to print.
  *
@@ -36,11 +37,12 @@ void print_buffer(char *b, int size)
 				printf("  ");
 
 			/* Add a space after every 2 bytes */
-			if (j % 2)
+			if (j % 2 == 1)
 				printf(" ");
 		}
 
 		/* Print character representation */
+		printf(" ");
 		for (j = 0; j < 10 && i + j < size; j++)
 		{
 			char c = b[i + j];
