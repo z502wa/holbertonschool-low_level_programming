@@ -10,20 +10,15 @@
  */
 void print_rev(char *s)
 {
-	int length = 0;
+	int i = 0, n;
 
-	/* Find the length of the string */
-	while (s[length] != '\0')
+	while (s[i] != '\0')
 	{
-		length++;
+		i++;
 	}
-
-	/* Print the string in reverse */
-	while (length > 0)
+	for (n = i - 1; n >= 0; n--)
 	{
-		length--;
-		putchar(s[length]);
+		_putchar(s[n]);
 	}
-
-	putchar('\n'); /* Print a newline at the end */
+	_putchar('\n');
 }
