@@ -2,16 +2,16 @@
 #include <stdio.h>
 
 /**
- * print_buffer - Prints a buffer with hexadecimal
- *                and character representation.
+ * print_buffer - Prints a buffer with hexadecimal and character representation.
  * @b: Pointer to the buffer.
  * @size: Number of bytes to print.
  *
  * Description:
  * - Prints 10 bytes per line.
- * - Each line starts with the position in hexadecimal (8 chars).
+ * - Each line starts with the position of the first byte in hexadecimal.
  * - Shows the hexadecimal content, 2 bytes at a time, separated by a space.
  * - Prints printable characters, otherwise prints '.'.
+ * - If size is 0 or less, prints only a new line.
  */
 void print_buffer(char *b, int size)
 {
@@ -28,7 +28,7 @@ void print_buffer(char *b, int size)
 		/* Print the position in hexadecimal */
 		printf("%08x: ", i);
 
-		/* Print hexadecimal representation */
+		/* Print hexadecimal content (2 bytes at a time) */
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
@@ -36,7 +36,6 @@ void print_buffer(char *b, int size)
 			else
 				printf("  ");
 
-			/* Add a space after every 2 bytes */
 			if (j % 2 == 1)
 				printf(" ");
 		}
