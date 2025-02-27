@@ -5,15 +5,21 @@
  * @n: The integer to print.
  *
  * Description: This function prints an integer character by character,
- * without using arrays, pointers, or hard-coded values.
+ * handling negative numbers properly without causing overflow.
  */
 void print_number(int n)
 {
 	int divisor = 1;
 	int temp = n;
 
-	/* Handle negative numbers */
-	if (n < 0)
+	/* Handle INT_MIN case separately */
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		_putchar('2');
+		temp = 147483648; /* Convert remaining part to positive */
+	}
+	else if (n < 0)
 	{
 		_putchar('-');
 		temp = -temp;
