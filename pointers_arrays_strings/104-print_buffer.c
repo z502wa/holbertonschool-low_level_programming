@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * print_buffer - Prints a buffer with hexadecimal and character representation.
+ * print_buffer - Prints a buffer with hexadecimal
+ *                and character representation.
  * @b: Pointer to the buffer.
  * @size: Number of bytes to print.
  *
