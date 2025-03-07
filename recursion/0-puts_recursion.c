@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _puts_recursion - Prints a string followed by a new line using recursion
@@ -7,12 +6,12 @@
  */
 void _puts_recursion(char *s)
 {
-	if (*s == '\0') /* قاعدة التوقف عند نهاية السلسلة */
+	if (*s == '\0') /* Base case: If string ends, print new line */
 	{
-		putchar('\n');
+		_putchar('\n');
 		return;
 	}
-	putchar(*s); /* طباعة الحرف الأول */
-	_puts_recursion(s + 1);
 
+	_putchar(*s); /* Print the current character */
+	_puts_recursion(s + 1); /* Recursive call for the next character */
 }
