@@ -9,6 +9,7 @@
  */
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	printf("%d\n", argc - 1); /* Print the number of arguments excluding the program name */
+	/* Print the number of arguments excluding the program name */
+	printf("%d\n", argc - 1);
 	return (0);
 }
