@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
- * _print - moves a string one place to the left and prints the string
- * @str: string to move
- * @l: size of string
+ * _print - Prints a string of digits, ignoring leading zeros.
+ * @str: The string to print.
+ * @l: The length of the string.
  *
- * Return: void
+ * Return: void.
  */
 void _print(char *str, int l)
 {
@@ -28,14 +28,14 @@ void _print(char *str, int l)
 }
 
 /**
- * mul - multiplies a char with a string and places the answer into dest
- * @n: char to multiply
- * @num: string to multiply
- * @num_index: last non NULL index of num
- * @dest: destination of multiplication
- * @dest_index: highest index to start addition
+ * mul - Multiplies a single digit with a string of digits.
+ * @n: The single digit to multiply.
+ * @num: The string of digits to multiply.
+ * @num_index: The last non-null index of num.
+ * @dest: The destination array to store the result.
+ * @dest_index: The starting index in dest for the result.
  *
- * Return: pointer to dest, or NULL on failure
+ * Return: Pointer to dest, or NULL on failure.
  */
 char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 {
@@ -58,17 +58,17 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
     }
     if (addrem)
     {
-        free(dest); // تحرير الذاكرة في حالة الفشل
+        free(dest); /* Free memory in case of failure */
         return (NULL);
     }
     return (dest);
 }
 
 /**
- * check_for_digits - checks the arguments to ensure they are digits
- * @av: pointer to arguments
+ * check_for_digits - Checks if the arguments are valid digits.
+ * @av: The array of arguments.
  *
- * Return: 0 if digits, 1 if not
+ * Return: 0 if all arguments are digits, 1 otherwise.
  */
 int check_for_digits(char **av)
 {
@@ -86,11 +86,11 @@ int check_for_digits(char **av)
 }
 
 /**
- * init - initializes a string
- * @str: string to initialize
- * @l: length of string
+ * init - Initializes a string with '0' characters.
+ * @str: The string to initialize.
+ * @l: The length of the string.
  *
- * Return: void
+ * Return: void.
  */
 void init(char *str, int l)
 {
@@ -102,11 +102,11 @@ void init(char *str, int l)
 }
 
 /**
- * main - multiply two numbers
- * @argc: number of arguments
- * @argv: argument vector
+ * main - Multiplies two positive numbers.
+ * @argc: The number of arguments.
+ * @argv: The array of arguments.
  *
- * Return: zero, or exit status of 98 if failure
+ * Return: 0 on success, or exit with status 98 on failure.
  */
 int main(int argc, char *argv[])
 {
@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
         {
             for (ti = 0; e[ti]; ti++)
                 _putchar(e[ti]);
-            free(a); // تحرير الذاكرة في حالة الفشل
+            free(a); /* Free memory in case of failure */
             exit(98);
         }
     }

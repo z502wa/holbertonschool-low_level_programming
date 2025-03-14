@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* Function Prototypes */
 void _print(char *str, int l);
 char *mul(char n, char *num, int num_index, char *dest, int dest_index);
 int check_for_digits(char **av);
