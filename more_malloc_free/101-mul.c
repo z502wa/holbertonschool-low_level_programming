@@ -1,12 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * is_digit - Checks if a string contains only digits.
- * @s: The string to check.
+ * is_digit - Checks if a string contains only digits
+ * @s: The string to check
  *
- * Return: 1 if only digits, 0 otherwise.
+ * Return: 1 if all digits, 0 otherwise
  */
 int is_digit(char *s)
 {
@@ -22,10 +21,10 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - Computes the length of a string.
- * @s: The string to measure.
+ * _strlen - Returns the length of a string
+ * @s: The string
  *
- * Return: The length of the string.
+ * Return: Length of the string
  */
 int _strlen(char *s)
 {
@@ -37,28 +36,32 @@ int _strlen(char *s)
 }
 
 /**
- * print_error - Prints "Error" and exits with status 98.
+ * print_error - Prints "Error" and exits with status 98
  */
 void print_error(void)
 {
-	char *error_msg = "Error\n";
-	while (*error_msg)
+	char *msg = "Error\n";
+
+	while (*msg)
 	{
-		_putchar(*error_msg);
-		error_msg++;
+		_putchar(*msg);
+		msg++;
 	}
 	exit(98);
 }
 
 /**
- * multiply - Multiplies two large numbers represented as strings.
- * @num1: First number as string.
- * @num2: Second number as string.
+ * multiply - Multiplies two large numbers represented as strings
+ * @num1: First number as string
+ * @num2: Second number as string
+ *
+ * Description: Result is printed to stdout
  */
 void multiply(char *num1, char *num2)
 {
 	int len1 = _strlen(num1), len2 = _strlen(num2);
-	int *result, i, j, carry, n1, n2, sum;
+	int *result;
+	int i, j, carry, n1, n2, sum;
 
 	result = calloc(len1 + len2, sizeof(int));
 	if (!result)
@@ -79,25 +82,26 @@ void multiply(char *num1, char *num2)
 	}
 
 	i = 0;
-	while (i < len1 + len2 && result[i] == 0)
+	while (i < (len1 + len2) && result[i] == 0)
 		i++;
 
 	if (i == len1 + len2)
 		_putchar('0');
 	else
-		while (i < len1 + len2)
+	{
+		while (i < (len1 + len2))
 			_putchar(result[i++] + '0');
-
+	}
 	_putchar('\n');
 	free(result);
 }
 
 /**
- * main - Entry point, multiplies two numbers.
- * @argc: Argument count.
- * @argv: Argument vector.
+ * main - Entry point, multiplies two numbers
+ * @argc: Argument count
+ * @argv: Argument vector
  *
- * Return: 0 on success, 98 on failure.
+ * Return: 0 on success, 98 on error
  */
 int main(int argc, char *argv[])
 {
