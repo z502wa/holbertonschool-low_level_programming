@@ -2,9 +2,11 @@
 #include <string.h>
 
 /**
- * get_op_func - دالّة تُعيد المؤشر للعملية المطلوبة
+ * get_op_func - يعيد المؤشر للعملية
  * @s: رمز العملية
- * Return: مؤشر الدالّة أو NULL في حال رمز غير صالح
+ *
+ * Return: مؤشر الدالّة أو NULL
+ *         إن كان الرمز غير صالح
  */
 int (*get_op_func(char *s))(int, int)
 {
