@@ -1,17 +1,27 @@
+; File: 100-hello_world.asm
+; Assemble with:
+;   nasm -f elf64 100-hello_world.asm
+; Link with:
+;   ld -o hello 100-hello_world.o
+; أو كما ذُكر في التعليمات:
+;   nasm -f elf64 100-hello_world.asm && gcc -no-pie -std=gnu89 100-hello_world.o -o hello
+
+global _start
+
 section .data
-    hello db "Hello, World", 10  ; The string to print, followed by a newline (ASCII 10)
-    hello_len equ $ - hello      ; Compute the length of the string
+    msg db "Hello, World", 10   ; النص المراد طباعته + سطر جديد
+    len equ $ - msg             ; حساب طول النص
 
 section .text
-    global _start
-
 _start:
-    mov rax, 1         ; syscall number for sys_write (1)
-    mov rdi, 1         ; file descriptor 1 (stdout)
-    mov rsi, hello     ; pointer to the string
-    mov rdx, hello_len ; length of the string
-    syscall            ; invoke the system call
+    ; استدعاء syscall للكتابة
+    mov rax, 1                  ; رقم استدعاء النظام للكتابة (write)
+    mov rdi, 1                  ; الرقم المميز لـ stdout
+    mov rsi, msg                ; عنوان بداية الرسالة
+    mov rdx, len                ; طول الرسالة
+    syscall
 
-    mov rax, 60        ; syscall number for sys_exit (60)
-    xor rdi, rdi       ; status 0 (success)
-    syscall            ; invoke the system call
+    ; استدعاء syscall للخروج
+    mov rax, 60                 ; رقم استدعاء النظام للخروج (exit)
+    xor rdi, rdi                ; كود الخروج 0
+    syscall
