@@ -11,4 +11,4 @@ main:
 	    xor rdi, rdi
 	    syscall
 	  section .data
-message:	 db "Hello, Holberton", 0xA, 0x0
+message:	 db "Hello, World", 0xA, 0x0
