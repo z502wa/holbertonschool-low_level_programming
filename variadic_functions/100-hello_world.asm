@@ -1,14 +1,20 @@
-section .text
-	  global main
-main:
-	    mov rax, 1
-	    mov rdi, 1
-	    mov rsi, message
-	    mov rdx, 17
-	    syscall
+; File: 100-hello_world.asm
+; Desc: 64-bit assembly program that prints
+;       Hello, World followed by a new line.
 
-	    mov rax, 60
-	    xor rdi, rdi
-	    syscall
-	  section .data
-message:	 db "Hello, World", 0xA, 0x0
+section .text
+   global main
+
+main:
+   mov edx,len
+   mov ecx,msg
+   mov ebx,1
+   mov eax,4
+   int 0x80
+
+   mov eax,0
+   int 0x80
+
+section .data
+   msg: db 'Hello, World', 0xa
+   len: equ $ - msg
