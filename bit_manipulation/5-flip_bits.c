@@ -40,9 +40,9 @@ void print_binary(unsigned long int n)
 /**
  * get_bit - returns the value of a bit at a given index
  * @n: number to search
- * @index: index of the bit, starting from 0
+ * @index: index of the bit
  *
- * Return: value of the bit at index or -1 if error
+ * Return: value of the bit or -1 if error
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
@@ -54,10 +54,10 @@ int get_bit(unsigned long int n, unsigned int index)
 
 /**
  * set_bit - sets the value of a bit to 1 at a given index
- * @n: pointer to the number to modify
- * @index: index of the bit to set
+ * @n: pointer to the number
+ * @index: index of the bit
  *
- * Return: 1 if it worked, or -1 if an error occurred
+ * Return: 1 if successful, -1 if error
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
@@ -70,10 +70,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 /**
  * clear_bit - sets the value of a bit to 0 at a given index
- * @n: pointer to the number to modify
- * @index: index of the bit to clear
+ * @n: pointer to the number
+ * @index: index of the bit
  *
- * Return: 1 if it worked, or -1 if an error occurred
+ * Return: 1 if successful, -1 if error
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
@@ -82,25 +82,4 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	*n &= ~(1UL << index);
 	return (1);
-}
-
-/**
- * flip_bits - returns the number of bits to flip to get from n to m
- * @n: first number
- * @m: second number
- *
- * Return: number of bits to flip
- */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
-{
-	unsigned long int xor = n ^ m;
-	unsigned int count = 0;
-
-	while (xor)
-	{
-		count += xor & 1;
-		xor >>= 1;
-	}
-
-	return (count);
 }
